@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
-import Header from './components/Header';
-import Cartoon from './components/Cartoon';
-import Footer from './components/Footer';
+import Page from './Page';
 
 class App extends Component {
-  state = { cartoon: '' }
+  state = {
+    cartoon: '',
+    caption: '',
+  }
 
   componentWillMount() {
     this.fetchCartoon();
@@ -37,17 +37,17 @@ class App extends Component {
   }
 
   render() {
-    const { cartoon } = this.state;
+    const { cartoon, caption } = this.state;
     const { isLoading, fetchCartoon } = this;
     if ( isLoading(cartoon) )
       return null;
     else {
       return (
-        <div className="flexbox-container">
-          <Header />
-          <Cartoon cartoon={cartoon}/>
-          <Footer nextCartoon={fetchCartoon}/>
-        </div>
+        <Page
+          fetchCartoon={fetchCartoon}
+          cartoon={cartoon}
+          caption={caption}
+        />
       );
     }
   }
