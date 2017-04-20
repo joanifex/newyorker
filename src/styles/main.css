@@ -43,3 +43,20 @@ body {
   color: #DB4E44;
   margin-bottom: 0;
 }
+
+.caption-container {
+  display: flex;
+  width: 100%
+}
+
+.caption {
+  font-style: italic;
+  padding: 0;
+  border: none;
+  width: 100%;
+  display: inline;
+}
+
+.caption:focus {
+  outline: none;
+}
