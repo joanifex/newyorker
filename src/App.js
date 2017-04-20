@@ -14,10 +14,21 @@ class App extends Component {
     fetch('http://www.newyorker.com/cartoons/random/randomAPI')
       .then( response => response.json())
       .then( json => {
-        const { src } = json[0];
-        this.setState({ cartoon: src });
+        const cartoon = this.findCartoonWithCaption(json);
+        if (!cartoon) {
+          this.fetchCartoon();
+        } else {
+          const { src } = cartoon;
+          this.setState({ cartoon: src });
+        }
       })
       .catch( e => console.log(e));
+  }
+
+  findCartoonWithCaption(cartoons) {
+    return cartoons.find( cartoon => {
+      return cartoon.caption !== "";
+    });
   }
 
   isLoading(cartoon){
