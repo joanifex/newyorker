@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
+import Header from './components/Header';
 import Cartoon from './components/Cartoon';
-import Caption from './components/Caption';
-import Next from './components/Next';
+import Footer from './components/Footer';
 
 class App extends Component {
   state = { cartoon: '' }
@@ -38,18 +39,17 @@ class App extends Component {
   render() {
     const { cartoon } = this.state;
     const { isLoading, fetchCartoon } = this;
-    return (
-      <div className="flexbox-container">
-        <h4>The Universal New Yorker Cartoon Caption</h4>
-        { isLoading(cartoon) ? null :
-          <div className="cartoon-container">
-            <Cartoon cartoon={cartoon}/>
-            <Caption />
-            <Next nextCartoon={fetchCartoon}/>
-          </div>
-        }
-      </div>
-    );
+    if ( isLoading(cartoon) )
+      return null;
+    else {
+      return (
+        <div className="flexbox-container">
+          <Header />
+          <Cartoon cartoon={cartoon}/>
+          <Footer nextCartoon={fetchCartoon}/>
+        </div>
+      );
+    }
   }
 }
 

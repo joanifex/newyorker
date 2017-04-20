@@ -1,22 +1,45 @@
 body {
   background-color: #f1f1f1;
+  text-align: center;
 }
 
 .flexbox-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
 }
 
-.cartoon-container {
-  max-width: 600px;
-}
-
-.cartoon {
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  max-width: 650px;
+  padding: 4rem 4rem 0.5rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .image {
-  width: 100%
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 700px) {
+  ;
+}
+
+/*TYPOGRAPHY*/
+
+.text-center { text-align: center; }
+
+.header-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: #DB4E44;
+  margin-bottom: 0;
 }
