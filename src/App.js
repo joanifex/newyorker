@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cartoon from './components/Cartoon';
 import Caption from './components/Caption';
+import Next from './components/Next';
 
 class App extends Component {
   state = { cartoon: '' }
@@ -23,21 +24,19 @@ class App extends Component {
     return cartoon === '';
   }
 
-  displayCartoon(cartoon) {
-    return(
-      <div className="cartoon-container">
-        <Cartoon cartoon={cartoon}/>
-        <Caption />
-      </div>
-    );
-  }
-
   render() {
     const { cartoon } = this.state;
-    const { isLoading, displayCartoon } = this;
+    const { isLoading, fetchCartoon } = this;
     return (
       <div className="flexbox-container">
-        { isLoading(cartoon) ? null : displayCartoon(cartoon) }
+        <h4>The Universal New Yorker Cartoon Caption</h4>
+        { isLoading(cartoon) ? null :
+          <div className="cartoon-container">
+            <Cartoon cartoon={cartoon}/>
+            <Caption />
+            <Next nextCartoon={fetchCartoon}/>
+          </div>
+        }
       </div>
     );
   }

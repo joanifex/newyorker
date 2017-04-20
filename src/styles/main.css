@@ -7,15 +7,14 @@ body {
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  align-items: center;
 }
 
 .cartoon-container {
-  align-self: center;
-  align-content: center;
+  max-width: 600px;
 }
 
 .cartoon {
-  align-self: center;
 }
 
 .image {
