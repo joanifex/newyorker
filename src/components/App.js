@@ -8,7 +8,20 @@ class App extends Component {
   }
 
   componentWillMount() {
+    this.randomCaption();
     this.fetchCartoon();
+  }
+
+  randomCaption = () => {
+    const captions = [
+      "Hi. I'd like to add you to my professional network on LinkedIn.",
+      "Christ, what an asshole!",
+      // "Perhaps our sex games have become too elaborate.",
+      // "Everyone was apparently very bored at work that day.",
+      "I call my own shots, largely based on an accumulation of data, and everyone knows it."
+    ]
+    const caption = captions[Math.floor(Math.random() * captions.length)];
+    this.setState({ caption })
   }
 
   fetchCartoon = () => {
@@ -19,8 +32,7 @@ class App extends Component {
         if (!cartoon) {
           this.fetchCartoon();
         } else {
-          const { src } = cartoon;
-          this.setState({ cartoon: src });
+          this.setState({ cartoon: cartoon.src });
         }
       })
       .catch( e => console.log(e));
@@ -38,15 +50,16 @@ class App extends Component {
 
   render() {
     const { cartoon, caption } = this.state;
-    const { isLoading, fetchCartoon } = this;
+    const { isLoading, fetchCartoon, randomCaption } = this;
     if ( isLoading(cartoon) )
       return null;
     else {
       return (
         <Page
-          fetchCartoon={fetchCartoon}
           cartoon={cartoon}
           caption={caption}
+          fetchCartoon={fetchCartoon}
+          randomCaption={randomCaption}
         />
       );
     }

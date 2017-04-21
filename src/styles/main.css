@@ -19,18 +19,24 @@ body {
   background-color: white;
   width: 80%;
   max-width: 650px;
+  max-height: 700px;
   padding: 4rem 4rem 0.5rem 4rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.image {
-  width: 100%;
-  height: auto;
+.card-image {
+  height: 75%
 }
 
-@media (min-width: 700px) {
-  ;
+.card-text {
+  height: 25;
+  width: 100%
+}
+
+.caption-container {
+  display: flex;
+  width: 100%
 }
 
 /*TYPOGRAPHY*/
@@ -44,19 +50,20 @@ body {
   margin-bottom: 0;
 }
 
-.caption-container {
-  display: flex;
-  width: 100%
-}
-
 .caption {
   font-style: italic;
   padding: 0;
   border: none;
   width: 100%;
-  display: inline;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
 }
 
 .caption:focus {
-  outline: none;
+  border: none;
 }

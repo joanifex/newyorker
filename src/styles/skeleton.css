@@ -191,12 +191,7 @@ input[type="button"] {
 button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="button"]:hover,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
+input[type="button"]:hover{
   color: #DB4E44;
   border-color: #DB4E44;
   outline: 0; }
