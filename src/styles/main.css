@@ -43,28 +43,19 @@ body {
 }
 
 .cartoon-image {
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100%;
-}
-
-@media (orientation: landscape) {
-  .card {
-    width: 55%;
-  }
-  .cartoon-image {
-    height: 100%;
-    width: auto;
-  }
 }
 
 .card-text {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
   width: 100%;
-  height: 10%;
+  height: 5%;
 }
 
 .caption {
