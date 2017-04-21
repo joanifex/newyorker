@@ -6,7 +6,6 @@ const Footer = ({ nextCartoon, randomCaption }) => {
   return(
     <div className="footer">
       <Next nextCartoon={nextCartoon} />
-      <RandomCaption randomCaption={randomCaption}/>
     </div>
   );
 }

@@ -3,11 +3,14 @@ import Header from './Header';
 import Cartoon from './Cartoon';
 import Footer from './Footer';
 
-const Page = ({ cartoon, caption, fetchCartoon, randomCaption }) => (
+const Page = ({ cartoon, fetchCartoon }) => (
   <div className="flexbox-container">
     <Header />
-    <Cartoon cartoon={cartoon} caption={caption} nextCartoon={fetchCartoon} />
-    <Footer nextCartoon={fetchCartoon} randomCaption={randomCaption}/>
+    <Cartoon
+      cartoon={cartoon}
+      nextCartoon={fetchCartoon}
+    />
+    <Footer nextCartoon={fetchCartoon}/>
   </div>
 );
 

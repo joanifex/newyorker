@@ -61,7 +61,6 @@ body {
 
 .card-text {
   display: flex;
-  text-align: center;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -71,9 +70,7 @@ body {
 .caption {
   font-family: 'EB Garamond', Times, Georgia, serif;
   font-style: italic;
-}
-/*.caption {
-  font-style: italic;
+  text-align: center;
   padding: 0;
   border: none;
   width: 100%;
@@ -88,4 +85,4 @@ body {
 
 .caption:focus {
   border: none;
-}*/
+}
