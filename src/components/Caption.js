@@ -12,6 +12,7 @@ class Caption extends React.Component {
     const { caption } = this.state;
     return(
       <textarea
+        rows="1"
         className="caption"
         value={caption}
         onChange={this.handleChange}
