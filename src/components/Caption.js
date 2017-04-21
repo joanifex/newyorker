@@ -23,14 +23,14 @@ class Caption extends React.Component {
   render(){
     const { caption } = this.state;
     return(
-      <div className="caption-container">
-        <textarea
-          autofocus
-          className="text-center caption"
+      <span className="caption">
+        {/* <textarea
+          className="caption"
           value={caption}
           onChange={this.handleChange}
-        />
-      </div>
+        /> */}
+        "{caption}"
+      </span>
     );
   }
 }
