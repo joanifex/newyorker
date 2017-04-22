@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   fetchCartoon = () => {
-    fetch('http://www.newyorker.com/cartoons/random/randomAPI')
+    fetch('https://www.newyorker.com/cartoons/random/randomAPI')
       .then( response => response.json())
       .then( json => {
         const cartoon = this.findCartoonWithCaption(json);
